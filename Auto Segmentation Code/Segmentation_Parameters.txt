@@ -1,0 +1,62 @@
+# _______________________________________________________ #
+# 
+# System Configurations for Automated Segmentation
+# 
+# Chidren's Hospital of Philadelphia | White Lab
+# Author: Hayden Fisher
+# Date: March 20, 2026
+#
+# _______________________________________________________ #
+
+
+# _____________________ Data Paths ______________________ #
+# 
+# Inputs should include directory location for input data 
+# (INDIR) and output data (OUTDIR)
+
+INDIR <filepath>
+OUTDIR <filepath>
+
+# ________________ Image Specifications _________________ #
+# 
+# Inputs should include the input image size (IM_SIZE) and
+# necessary rotation for the nasal most point to be at the
+# top of the image (IM_ROT).
+
+IM_SIZE	    128
+IM_ROTATE   90
+
+# _____________________ Landmarks _______________________ #
+# 
+# Inputs include whether or not landmarks have been
+# previously determined (CREATE_LANDMARKS), where 1
+# indicates that landmarks will be selected during automated
+# segmentation process and 0 indicates that landmarks have
+# already been determined.
+
+CREATE_LANDMARKS	1
+
+# ____________________ LED Settings _____________________ #
+# 
+# Inputs should include the number of LEDs being used by
+# imaging system (NUMLED), an array of wavelengths inluded
+# in input data (WAVELENGTHS), an array indicating LEDs
+# used for fluorescence imaging (FLUORESCENCE), and an array 
+# indicating which wavelengths should be utilized by the 
+# segmentation algorithm (INCLUDE).
+
+NUMLED          4
+WAVELENGTHS	[470, 530, 590, 625]
+FLUORESCENCE	[0, 0, 0, 0]
+INCLUDE		[1, 1, 1, 1]
+
+# _______________________ TUNING ________________________ #
+# 
+# Inputs should include parameters for weighting function
+# slope (SIGMOID_ALPHA), weighting function shift 
+# (SIGMOID_BETA), and edge smoothing threshold (THRESHOLD).
+
+SIGMOID_ALPHA	8
+SIGMOID_BETA	4		
+THRESHOLD	0.6
+WINDOW          8
